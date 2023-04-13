@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+header {
+    background-color: blueviolet;
+    padding: 16px 0;
+    color: white;
+    display: flex;
+    border-bottom: 16px solid rgb(101, 30, 168);
+    justify-content: center;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+header button{
+    margin-left: 16px;
+}
+
+form{
+    background-color: aliceblue;
+    padding: 24px 0;
+    text-align: center;
+    display: none;
+}
+
+form h2 {
+    margin-bottom: 16px;
+}
+
+input, button {
+    padding: 8px;
+}
+
+button {
+    background-color: rgb(40, 161, 40) ;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: white;
+}
+
+#btn-cancel {
+    background-color: tomato ;
+}
+
+ul {
+    /* 
+    flex wrap pra quando chegar o limite, cria-se uma nova linha 
+    */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul li {
+    /* 
+    elemento pai
+
+    max-width - largura maxima dos itens em porcentagem
+    list-style - remover bolinhas da img
+    overflow-y - ocultar o que passar
+    position:relative - para que o layout nao vase
+    */
+    max-width: 25%;
+    list-style: none;
+    position: relative;
+    max-height: 210px;
+    overflow-y: hidden;
+}
+
+ul li img {
+    width: 100%;
+}
+
+.overlay-imagem-link {
+    /* espacamento interno */
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all ease .4s;
+}
+
+.overlay-imagem-link a {
+    color:aliceblue;
+    text-decoration: none;
+}
+
+ul li:hover .overlay-imagem-link {
+    opacity: 1;
+}
