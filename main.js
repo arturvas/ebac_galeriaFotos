@@ -36,7 +36,7 @@ $(document).ready(function(){
         e.preventDefault();
         const enderecoDaNovaImagem = $('#endereco-imagem-nova').val();
         // criar elemento html que sera inserido no final da lista
-        const novoItem = $('<li></li>');
+        const novoItem = $('<li style="display: none"></li>');
         $(`<img src="${enderecoDaNovaImagem}" />`).appendTo(novoItem); //appendto é para adcionar um novo elemento
         $(`
             <div class="overlay-imagem-link">
@@ -46,6 +46,7 @@ $(document).ready(function(){
             </div>  
         `).appendTo(novoItem); //appendto é para adcionar um novo elemento
         $(novoItem).appendTo('ul');
-        $('#endereco-imagem-nova').val('');
+        $(novoItem).fadeIn(1000);
+        $('#endereco-imagem-nova').val('')
     })
 })
