@@ -1,6 +1,8 @@
+/*
 $(document).ready(function(){
     console.log (document.querySelector('header button'));
 })
+*/
 
 /* 
 Representamos o jQuerry através do $
@@ -10,9 +12,11 @@ estiver pronto, execute esse console.log
 caso eu queria selecionar o botao de "Nova imagem +"
 */
 
+/*
 $(document).ready(function(){
     console.log ($('#btn-cancel'));
 })
+*/
 
 /*
 Entao nesse exmplo eu to pegando o botao do HTML 
@@ -29,7 +33,19 @@ $(document).ready(function(){
     })
 
     $('form').on('submit', function(e){
-        console.log("submit");
         e.preventDefault();
+        const enderecoDaNovaImagem = $('#endereco-imagem-nova').val();
+        // criar elemento html que sera inserido no final da lista
+        const novoItem = $('<li></li>');
+        $(`<img src="${enderecoDaNovaImagem}" />`).appendTo(novoItem); //appendto é para adcionar um novo elemento
+        $(`
+            <div class="overlay-imagem-link">
+                <a href="${enderecoDaNovaImagem}" title="Ver imagem em tamanho real" target="_blank">
+                    Ver imagem em tamanho real
+                </a>
+            </div>  
+        `).appendTo(novoItem); //appendto é para adcionar um novo elemento
+        $(novoItem).appendTo('ul');
+        $('#endereco-imagem-nova').val('');
     })
 })
